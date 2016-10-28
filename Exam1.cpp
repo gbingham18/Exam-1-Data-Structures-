@@ -9,6 +9,8 @@ using std::endl;
 using std::string;
 using std::vector;
 
+//PT -- 88/100
+
 namespace Exam1 // NAMESPACE
 {
 	class Wheel
@@ -29,6 +31,7 @@ namespace Exam1 // NAMESPACE
 		vector<Wheel> wheels;
 
 	public:
+		//PT -- don't need this
 		Vehicle();
 		Vehicle(string color) {
 			_color = color;
@@ -44,10 +47,15 @@ namespace Exam1 // NAMESPACE
 		//Top speed: 250mph
 		//Wheel radius: 305mm
 	public:
+		//PT -- call the base class constructor
+		//PT -- -4
+		//RaceCar(string color) : Vehicle(color) { ... }
 		RaceCar(string color) {
+			//PT -- let the base class constructor handle color
 			_color = color;
 			_topspeed = 205;
 			Wheel A(305);
+			//PT -- there are four wheels for a race car.
 			wheels.push_back(A);
 		}
 
@@ -60,6 +68,9 @@ namespace Exam1 // NAMESPACE
 		//Top speed: 95mph
 		//Wheel radius: 381mm
 	public:
+		//PT -- call the base class constructor
+		//PT -- -4
+		//Sedan(string color, int seats) : Vehicle(color) { ... }
 		Sedan(string color, int seats)
 		{
 			_color = color;
@@ -79,6 +90,9 @@ namespace Exam1 // NAMESPACE
 		//Top speed: 85mph
 		//Wheel radius: 432mm
 	public:
+		//PT -- call the base class constructor
+		//PT -- -4
+		//Pickup(string color, int capacity) : Vehicle(color) { ... }
 		Pickup(string color, int capacity) {
 			_color = color;
 			hauling_capacity = capacity;
